@@ -9,7 +9,10 @@ body {
 main#contenu {
     min-height: 80vh; /* Repousse le footer vers le bas si le contenu est court */
 }
-
+.banner {
+        background-color: #ffffff;
+    color: #161616;
+}
 /* 2. Éléments de présentation (Notes et Encarts) */
 .notes-section { 
     background-color: #f6f6f6; 
