@@ -9,7 +9,7 @@ body {
 main#contenu {
     min-height: 80vh; /* Repousse le footer vers le bas si le contenu est court */
 }
-.banner {
+.fr-header {
         background-color: #ffffff;
     color: #161616;
 }
