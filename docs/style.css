@@ -125,6 +125,10 @@ background-color: #fffffe !important;
    ========================================================================== */
 
 @media (max-width: 768px) {
+    .fr-header{
+background-color: #fffffe !important;
+    color: #161616 !important;
+}
     /* Sécurité anti-chevauchement */
     .fr-grid-row {
         width: 100% !important;
