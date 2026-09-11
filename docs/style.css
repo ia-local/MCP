@@ -2,11 +2,11 @@
 html, body {
     background-color: #ffffff !important;
     color: #161616 !important;
-    color-scheme: light !important; /* Interdit à Chrome/Safari de forcer le dark mode */
-    overflow-x: hidden; /* Empêche la page de casser sur les côtés */
+    color-scheme: light !important; 
+    overflow-x: hidden; 
 }
 
-/* Forçage des couleurs des encarts */
+/* Forçage des couleurs des encarts et du texte */
 .notes-section, .insight-box, .fr-callout, .fr-tile {
     background-color: #f6f6f6 !important;
     color: #161616 !important;
@@ -21,7 +21,11 @@ html, body {
     color: #000091 !important; 
 }
 
-h1, h2, h3, h4, p, li {
+h1, h2, h3, h4, p, li, .fr-text--regular, .fr-text--sm, .fr-text--lead {
+    color: #161616 !important;
+}
+
+.fr-h1, .fr-h3, .fr-h4, .fr-h6, .fr-callout__title {
     color: #161616 !important;
 }
 
@@ -35,7 +39,7 @@ h1, h2, h3, h4, p, li {
    ========================================================================== */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* Ratio 16:9 */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     max-width: 100%;
@@ -77,17 +81,17 @@ h1, h2, h3, h4, p, li {
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
-    overflow-wrap: break-word; /* Empêche les débordements de texte */
+    overflow-wrap: break-word; 
 }
 
 /* Hiérarchie visuelle (Desktop) */
 .level-1 { background-color: #000091 !important; max-width: 50%; border: 2px solid #00a95f !important; }
-.level-2 { background-color: #000091 !important; max-width: 65%; opacity: 0.9; }
+.level-2 { background-color: #000091 !important; max-width: 65%; opacity: 0.9; border: none !important; }
 .level-3 { background-color: #000091 !important; max-width: 80%; opacity: 0.8; border: 2px dashed #e1000f !important; }
-.level-4 { background-color: #000091 !important; max-width: 95%; opacity: 0.7; }
+.level-4 { background-color: #000091 !important; max-width: 95%; opacity: 0.7; border: none !important; }
 
 .pyramid-caption { 
-    font-size: 0.85rem; 
+    font-size: 0.85rem !important; 
     color: #666666 !important; 
     margin-top: 1rem; 
     font-style: italic; 
@@ -104,13 +108,6 @@ h1, h2, h3, h4, p, li {
         margin: 0 !important;
     }
     
-    .fr-callout {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
     /* Optimisation de l'espace */
     .notes-section, .insight-box {
         padding: 1.25rem !important;
