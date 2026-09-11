@@ -20,7 +20,24 @@
             margin-bottom: 2.5rem;
         }
         .speaker { font-weight: bold; color: #000091; }
-        
+                /* Conteneur responsive pour la vidéo YouTube */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    
         /* Schéma Hiérarchie des Normes */
         .pyramid-container {
             display: flex;
@@ -87,7 +104,11 @@
             <div class="fr-grid-row fr-grid-row--gutters">
                 <!-- Colonne Principale -->
                 <div class="fr-col-12 fr-col-lg-8">
-                    
+                                        <section class="fr-mb-4w">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/_tgHdz2s3Tk?autoplay=1&mute=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </section>
                     <section class="notes-section">
                         <h2 class="fr-h3">1. Présentation du projet RUP-CVNU</h2>
                         <div class="fr-text--regular">
@@ -95,6 +116,7 @@
                             <p>Le financement ne repose pas sur de la dette, mais sur une <strong>économie circulaire</strong> via la réaffectation de la TVA (Taxe sur la Valeur Ajoutée), perçue comme l'impôt le plus injuste, pour financer directement la valeur travail des citoyens.</p>
                         </div>
                     </section>
+                    <!-- Intégration Vidéo YouTube -->
 
                     <section class="fr-mb-6w">
                         <h2 class="fr-h3">2. Bilan des Débats : Objections et Réponses</h2>
