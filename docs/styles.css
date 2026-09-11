@@ -90,7 +90,11 @@ main#contenu {
     font-style: italic; 
     text-align: center;
 }
-
+.aside{
+    background-color: #ffffff;
+    color: #161616;
+    
+}
 /* 5. Optimisations pour écrans mobiles (Smartphones) */
 @media (max-width: 768px) {
     .notes-section, .insight-box {
