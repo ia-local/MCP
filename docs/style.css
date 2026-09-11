@@ -27,7 +27,10 @@ html, body {
     margin-bottom: 2.5rem;
     color: #161616 !important;
 }
-
+.fr-header{
+    background-color: #ffffff !important;
+    color: #161616 !important;
+}
 /* Forçage des couleurs du texte à l'intérieur des blocs (Anti-inversion mobile) */
 .notes-section *, .insight-box *, .fr-callout * {
     color: #161616 !important;
