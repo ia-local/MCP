@@ -1,39 +1,45 @@
-/* style.css - Feuille de style personnalisée pour le compte-rendu MCP */
+/* BLOCAGE ABSOLU DU MODE SOMBRE FORCE PAR LE TELEPHONE */
+html, body {
+    background-color: #ffffff !important;
+    color: #161616 !important;
+    color-scheme: light !important; /* Interdit à Chrome/Safari de forcer le dark mode */
+    overflow-x: hidden; /* Empêche la page de casser sur les côtés */
+}
 
-/* ==========================================================================
-   Mise en page des blocs de contenu
-   ========================================================================== */
-
-.notes-section { 
-    background-color: #f6f6f6; 
-    padding: 2.5rem; 
-    border-left: 4px solid #000091;
-    margin-bottom: 2.5rem;
+/* Forçage des couleurs des encarts */
+.notes-section, .insight-box, .fr-callout, .fr-tile {
+    background-color: #f6f6f6 !important;
+    color: #161616 !important;
 }
 
 .insight-box {
-    background-color: #e8edff;
-    padding: 2rem;
-    border-left: 4px solid #000091;
-    margin-bottom: 2.5rem;
+    background-color: #e8edff !important;
 }
 
 .speaker { 
-    font-weight: bold; 
-    color: #000091; 
+    font-weight: bold !important; 
+    color: #000091 !important; 
+}
+
+h1, h2, h3, h4, p, li {
+    color: #161616 !important;
+}
+
+.fr-accordion__title, .fr-accordion__btn {
+    background-color: #ffffff !important;
+    color: #161616 !important;
 }
 
 /* ==========================================================================
    Conteneur Vidéo YouTube (Responsive 16:9)
    ========================================================================== */
-
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* Ratio 16:9 */
     height: 0;
     overflow: hidden;
     max-width: 100%;
-    background-color: #000000;
+    background-color: #000000 !important;
     border-radius: 4px;
 }
 
@@ -49,7 +55,6 @@
 /* ==========================================================================
    Schéma : Pyramide des Normes
    ========================================================================== */
-
 .pyramid-container {
     display: flex;
     flex-direction: column;
@@ -57,54 +62,64 @@
     gap: 0.5rem;
     margin: 2.5rem 0;
     padding: 1.5rem;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
+    background-color: #ffffff !important;
+    border: 1px solid #dddddd !important;
     border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .pyramid-level {
     padding: 1rem;
     text-align: center;
-    color: #ffffff;
+    color: #ffffff !important;
     font-weight: bold;
     border-radius: 4px;
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    word-wrap: break-word; /* Évite les débordements de texte sur mobile */
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* Empêche les débordements de texte */
 }
 
 /* Hiérarchie visuelle (Desktop) */
-.level-1 { background-color: #000091; max-width: 50%; border: 2px solid #00a95f; }
-.level-2 { background-color: #000091; max-width: 65%; opacity: 0.9; }
-.level-3 { background-color: #000091; max-width: 80%; opacity: 0.8; border: 2px dashed #e1000f; }
-.level-4 { background-color: #000091; max-width: 95%; opacity: 0.7; }
+.level-1 { background-color: #000091 !important; max-width: 50%; border: 2px solid #00a95f !important; }
+.level-2 { background-color: #000091 !important; max-width: 65%; opacity: 0.9; }
+.level-3 { background-color: #000091 !important; max-width: 80%; opacity: 0.8; border: 2px dashed #e1000f !important; }
+.level-4 { background-color: #000091 !important; max-width: 95%; opacity: 0.7; }
 
 .pyramid-caption { 
     font-size: 0.85rem; 
-    color: #666666; 
+    color: #666666 !important; 
     margin-top: 1rem; 
     font-style: italic; 
     text-align: center;
 }
 
 /* ==========================================================================
-   Adaptations pour écrans mobiles (Smartphones)
+   Adaptations Mobiles (Smartphones)
    ========================================================================== */
-
 @media (max-width: 768px) {
-    /* Réduction des marges internes pour optimiser l'espace d'écran */
-    .notes-section, .insight-box {
-        padding: 1.5rem;
+    /* Sécurité anti-chevauchement */
+    .fr-grid-row {
+        width: 100% !important;
+        margin: 0 !important;
     }
     
-    /* Cassure de l'effet pyramide pour garantir la lisibilité du texte sur petit écran */
+    .fr-callout {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Optimisation de l'espace */
+    .notes-section, .insight-box {
+        padding: 1.25rem !important;
+    }
+    
+    /* Destruction de l'effet pyramide pour garantir la lisibilité sur mobile */
     .pyramid-level {
         max-width: 100% !important; 
-        font-size: 0.9rem;
-        padding: 0.75rem;
-    }
-    
-    .level-1 { 
-        border-width: 1px; 
+        font-size: 0.9rem !important;
+        padding: 0.75rem !important;
     }
 }
