@@ -1,0 +1,106 @@
+/* style.css - Feuille de style personnalisée (Thème Clair Forcé & Correction Responsive) */
+
+/* 1. Forcer les couleurs du thème clair en cas de forçage navigateur */
+body {
+    background-color: #ffffff;
+    color: #161616;
+}
+
+main#contenu {
+    min-height: 80vh; /* Repousse le footer vers le bas si le contenu est court */
+}
+
+/* 2. Éléments de présentation (Notes et Encarts) */
+.notes-section { 
+    background-color: #f6f6f6; 
+    padding: 2.5rem; 
+    border-left: 4px solid #000091;
+    margin-bottom: 2.5rem;
+}
+
+.insight-box {
+    background-color: #e8edff;
+    padding: 2rem;
+    border-left: 4px solid #000091;
+    margin-bottom: 2.5rem;
+}
+
+.speaker { 
+    font-weight: bold; 
+    color: #000091; 
+}
+
+/* 3. Conteneur Vidéo YouTube (Ratio 16:9 100% responsive) */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000000;
+    border-radius: 4px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 4. Schéma Hiérarchie des Normes */
+.pyramid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+.pyramid-level {
+    padding: 1rem;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    word-wrap: break-word; /* Empêche le texte de dépasser sur mobile */
+}
+
+/* Tailles relatives pour l'effet pyramide sur Desktop */
+.level-1 { background-color: #000091; max-width: 50%; border: 2px solid #00a95f; }
+.level-2 { background-color: #000091; max-width: 65%; opacity: 0.9; }
+.level-3 { background-color: #000091; max-width: 80%; opacity: 0.8; border: 2px dashed #e1000f; }
+.level-4 { background-color: #000091; max-width: 95%; opacity: 0.7; }
+
+.pyramid-caption { 
+    font-size: 0.85rem; 
+    color: #666666; 
+    margin-top: 1rem; 
+    font-style: italic; 
+    text-align: center;
+}
+
+/* 5. Optimisations pour écrans mobiles (Smartphones) */
+@media (max-width: 768px) {
+    .notes-section, .insight-box {
+        padding: 1.5rem; /* Réduit les marges internes pour gagner de la place */
+    }
+    
+    .pyramid-level {
+        max-width: 100% !important; /* Casse l'effet pyramide pour garantir la lisibilité du texte */
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+    
+    .level-1 { 
+        border-width: 1px; 
+    }
+}
