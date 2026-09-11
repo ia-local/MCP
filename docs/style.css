@@ -1,19 +1,40 @@
 /* BLOCAGE ABSOLU DU MODE SOMBRE FORCE PAR LE TELEPHONE */
+:root {
+    color-scheme: light only;
+}
 html, body {
     background-color: #ffffff !important;
     color: #161616 !important;
-    color-scheme: light !important; 
     overflow-x: hidden; 
 }
 
-/* Forçage des couleurs des encarts et du texte */
-.notes-section, .insight-box, .fr-callout, .fr-tile {
-    background-color: #f6f6f6 !important;
+/* ==========================================================================
+   Éléments de présentation (Restauration des bordures et espacements)
+   ========================================================================== */
+
+.notes-section { 
+    background-color: #f6f6f6 !important; 
+    padding: 2.5rem; 
+    border-left: 4px solid #000091 !important;
+    margin-bottom: 2.5rem;
     color: #161616 !important;
 }
 
 .insight-box {
     background-color: #e8edff !important;
+    padding: 2rem;
+    border-left: 4px solid #000091 !important;
+    margin-bottom: 2.5rem;
+    color: #161616 !important;
+}
+
+/* Forçage des couleurs du texte à l'intérieur des blocs (Anti-inversion mobile) */
+.notes-section *, .insight-box *, .fr-callout * {
+    color: #161616 !important;
+}
+
+.notes-section h2, .insight-box h2, .fr-callout h3 {
+    color: #161616 !important;
 }
 
 .speaker { 
@@ -21,22 +42,19 @@ html, body {
     color: #000091 !important; 
 }
 
-h1, h2, h3, h4, p, li, .fr-text--regular, .fr-text--sm, .fr-text--lead {
-    color: #161616 !important;
-}
-
-.fr-h1, .fr-h3, .fr-h4, .fr-h6, .fr-callout__title {
-    color: #161616 !important;
-}
-
 .fr-accordion__title, .fr-accordion__btn {
     background-color: #ffffff !important;
     color: #161616 !important;
 }
 
+.fr-callout, .fr-tile {
+    background-color: #f6f6f6 !important;
+}
+
 /* ==========================================================================
    Conteneur Vidéo YouTube (Responsive 16:9)
    ========================================================================== */
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%; 
@@ -59,6 +77,7 @@ h1, h2, h3, h4, p, li, .fr-text--regular, .fr-text--sm, .fr-text--lead {
 /* ==========================================================================
    Schéma : Pyramide des Normes
    ========================================================================== */
+
 .pyramid-container {
     display: flex;
     flex-direction: column;
@@ -86,9 +105,9 @@ h1, h2, h3, h4, p, li, .fr-text--regular, .fr-text--sm, .fr-text--lead {
 
 /* Hiérarchie visuelle (Desktop) */
 .level-1 { background-color: #000091 !important; max-width: 50%; border: 2px solid #00a95f !important; }
-.level-2 { background-color: #000091 !important; max-width: 65%; opacity: 0.9; border: none !important; }
+.level-2 { background-color: #000091 !important; max-width: 65%; opacity: 0.9; }
 .level-3 { background-color: #000091 !important; max-width: 80%; opacity: 0.8; border: 2px dashed #e1000f !important; }
-.level-4 { background-color: #000091 !important; max-width: 95%; opacity: 0.7; border: none !important; }
+.level-4 { background-color: #000091 !important; max-width: 95%; opacity: 0.7; }
 
 .pyramid-caption { 
     font-size: 0.85rem !important; 
@@ -101,6 +120,7 @@ h1, h2, h3, h4, p, li, .fr-text--regular, .fr-text--sm, .fr-text--lead {
 /* ==========================================================================
    Adaptations Mobiles (Smartphones)
    ========================================================================== */
+
 @media (max-width: 768px) {
     /* Sécurité anti-chevauchement */
     .fr-grid-row {
@@ -108,6 +128,13 @@ h1, h2, h3, h4, p, li, .fr-text--regular, .fr-text--sm, .fr-text--lead {
         margin: 0 !important;
     }
     
+    .fr-callout {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
     /* Optimisation de l'espace */
     .notes-section, .insight-box {
         padding: 1.25rem !important;
